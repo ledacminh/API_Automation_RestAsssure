@@ -24,11 +24,13 @@ public class OAuth {
         //Basic authorization
         Response response = requestSpecification.auth().preemptive().basic(clientId, clientSecret).param("grant_type", "client_credentials").post();
         System.out.println("Response " + response.prettyPrint());
+        //Get access token
 
     }
 
     @Test
     public void ListInvoice() {
+        //Get access token from the test case above
         RestAssured.given().auth().oauth2("accesstoken").queryParam("page", 3).get("url");
 
     }
